@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltipla Créditos - Soluções Financeiras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(30, 41, 59, 0.5); }
+        /* Cor dourada personalizada */
+        .text-gold {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- NOVO ESTILO PARA OS CAMPOS DO FORMULÁRIO --- */
+        input, select, textarea {
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.6) !important; /* Fundo escuro e translúcido */
+            border: 1px solid rgba(59, 130, 246, 0.3) !important; /* Borda azul sutil */
+            padding: 1rem !important; /* Mais espaçamento interno */
+            border-radius: 1rem !important; /* Bordas bem arredondadas */
+            color: #f8fafc !important; /* Texto claro */
+            outline: none;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Sombra interna para profundidade */
+            backdrop-filter: blur(5px); /* Efeito de desfoque no fundo do input */
+            transition: all 0.3s ease; /* Transição suave */
+        }
+
+        /* Estilo quando o campo está em foco (clicado) */
+        input:focus, select:focus, textarea:focus {
+            border-color: #3b82f6 !important; /* Borda azul brilhante */
+            background-color: rgba(15, 23, 42, 0.8) !important; /* Fundo um pouco menos transparente */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), inset 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important; /* Anel de foco azul */
+        }
+        
+        /* Estilo para o placeholder (texto de exemplo) */
+        ::placeholder {
+            color: #94a3b8; /* Cor cinza claro para o placeholder */
+            opacity: 1;
+        }
+        /* -------------------------------------------------- */
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="sticky top-0 z-40 glass border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{% url 'home' %}" class="text-xl md:text-2xl font-black text-gold tracking-tighter">
+                MÚLTIPLA CRÉDITOS7 ⚜️
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="{% url 'home' %}" class="hover:text-blue-400 transition">HOME</a>
+                <a href="{% url 'about' %}" class="hover:text-blue-400 transition">SOBRE</a>
+                <a href="https://wa.me/556282091116" target="_blank" class="hover:text-blue-400 transition">CONTATO</a>
+            </div>
+            <a href="https://www.instagram.com/multiplacreditos7/" target="_blank" class="text-xl hover:text-pink-500">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer class="bg-slate-950 border-t border-slate-900 pt-16 pb-8 px-4 mt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <h3 class="font-bold text-blue-500 mb-4">VISITE NOSSA LOJA</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Av. Independência, Qd 2 - Lote 23 Sala 03<br>
+                    Colina Azul, Aparecida de Goiânia - GO<br>
+                    74970-555
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold text-blue-500 mb-4">NAVEGAÇÃO</h3>
+                <ul class="text-slate-400 space-y-2 text-sm">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">Sobre</a></li>
+                    <li><a href="https://wa.me/556282091116">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-blue-500 mb-4">SERVIÇOS</h3>
+                <ul class="text-slate-400 space-y-2 text-sm">
+                    <li><a href="{% url 'about' %}#fgts">FGTS</a></li>
+                    <li><a href="{% url 'about' %}#inss">INSS</a></li>
+                    <li><a href="{% url 'about' %}#clt">CLT</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-blue-500 mb-4">CONTATO</h3>
+                <div class="text-slate-400 text-sm space-y-2">
+                    <p>CNPJ: 00.000.000/0001-00</p>
+                    <p>E-mail: contato@multipla.com</p>
+                    <div class="flex space-x-4 pt-2 text-xl">
+                        <a href="https://wa.me/556282091116" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/multiplacreditos7/" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-slate-900 text-slate-600 text-xs">
+            © 2024 Múltipla Créditos. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/556282091116" target="_blank" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+</body>
+</html>

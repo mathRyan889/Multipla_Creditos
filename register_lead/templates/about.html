@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="max-w-4xl mx-auto px-4 pt-16">
+    <div class="text-center mb-16">
+        <h1 class="text-4xl font-extrabold mb-6">Sobre a <span class="text-blue-500">Múltipla</span></h1>
+        <p class="text-slate-400 leading-relaxed text-lg">
+            A Múltipla Créditos nasceu para facilitar o acesso ao crédito consciente. 
+            Com anos de experiência no mercado de Goiânia, somos especialistas em transformar o seu saldo 
+            e o seu trabalho em oportunidades reais de crescimento financeiro.
+        </p>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+        <i class="fas fa-hand-holding-usd text-blue-500"></i> Nossos Serviços
+    </h2>
+
+    <div class="space-y-4">
+        <div id="fgts" class="glass rounded-2xl overflow-hidden">
+            <button onclick="toggleAccordion('content-fgts')" class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-800/50 transition">
+                <span class="font-bold text-lg">Antecipação FGTS</span>
+                <i class="fas fa-chevron-down text-blue-500"></i>
+            </button>
+            <div id="content-fgts" class="hidden p-6 pt-0 text-slate-400 border-t border-slate-800">
+                A antecipação do Saque-Aniversário permite que você utilize o saldo do seu FGTS como garantia para um empréstimo, 
+                sem comprometer sua renda mensal. É ideal para quem precisa de dinheiro rápido, com taxas baixas e sem boletos.
+            </div>
+        </div>
+
+        <div id="inss" class="glass rounded-2xl overflow-hidden">
+            <button onclick="toggleAccordion('content-inss')" class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-800/50 transition">
+                <span class="font-bold text-lg">Empréstimo INSS</span>
+                <i class="fas fa-chevron-down text-blue-500"></i>
+            </button>
+            <div id="content-inss" class="hidden p-6 pt-0 text-slate-400 border-t border-slate-800">
+                Crédito consignado exclusivo para aposentados e pensionistas do INSS. As parcelas são descontadas diretamente no benefício, 
+                garantindo as menores taxas de juros e prazos estendidos para pagamento.
+            </div>
+        </div>
+
+        <div id="clt" class="glass rounded-2xl overflow-hidden">
+            <button onclick="toggleAccordion('content-clt')" class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-800/50 transition">
+                <span class="font-bold text-lg">Crédito CLT</span>
+                <i class="fas fa-chevron-down text-blue-500"></i>
+            </button>
+            <div id="content-clt" class="hidden p-6 pt-0 text-slate-400 border-t border-slate-800">
+                Soluções para quem trabalha com carteira assinada. Analisamos seu perfil para oferecer a melhor linha de crédito 
+                pessoal, ajudando você a realizar seus sonhos ou organizar sua vida financeira.
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleAccordion(id) {
+        const element = document.getElementById(id);
+        const allContents = [document.getElementById('content-fgts'), document.getElementById('content-inss'), document.getElementById('content-clt')];
+        
+        allContents.forEach(content => {
+            if(content.id !== id) content.classList.add('hidden');
+        });
+        
+        element.classList.toggle('hidden');
+    }
+</script>
+{% endblock %}

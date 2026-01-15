@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="max-w-7xl mx-auto px-4 pt-12">
+    <section class="text-center mb-20">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Soluções financeiras <br><span class="text-blue-500">rápidas e seguras.</span></h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">Escolha o serviço ideal para você e simule agora mesmo via WhatsApp com nossos especialistas.</p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <a href="https://wa.me/556282091116?text=Olá! Gostaria de saber mais sobre o Empréstimo FGTS." target="_blank" 
+           class="glass p-8 rounded-3xl hover:border-blue-500 transition-all group">
+            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6 text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i class="fas fa-wallet text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Empréstimo FGTS</h3>
+            <p class="text-slate-400 text-sm">Antecipe seu saque aniversário com as melhores taxas do mercado.</p>
+            <span class="inline-block mt-6 text-blue-500 font-semibold group-hover:translate-x-2 transition-transform">Simular agora →</span>
+        </a>
+
+        <a href="https://wa.me/556282091116?text=Olá! Gostaria de saber mais sobre o Empréstimo INSS." target="_blank" 
+           class="glass p-8 rounded-3xl hover:border-blue-500 transition-all group">
+            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6 text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i class="fas fa-users text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">INSS</h3>
+            <p class="text-slate-400 text-sm">Crédito consignado para aposentados e pensionistas sem burocracia.</p>
+            <span class="inline-block mt-6 text-blue-500 font-semibold group-hover:translate-x-2 transition-transform">Simular agora →</span>
+        </a>
+
+        <a href="https://wa.me/556282091116?text=Olá! Gostaria de saber mais sobre o Empréstimo CLT." target="_blank" 
+           class="glass p-8 rounded-3xl hover:border-blue-500 transition-all group">
+            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6 text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i class="fas fa-briefcase text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">CLT</h3>
+            <p class="text-slate-400 text-sm">Crédito especial para trabalhadores de carteira assinada.</p>
+            <span class="inline-block mt-6 text-blue-500 font-semibold group-hover:translate-x-2 transition-transform">Simular agora →</span>
+        </a>
+    </div>
+
+    <section class="max-w-xl mx-auto glass p-8 md:p-12 rounded-[2.5rem]">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold">Deixe seu contato</h2>
+            <p class="text-slate-400">Nossa equipe entrará em contato com você.</p>
+        </div>
+        
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                <label class="text-sm text-slate-400 mb-1 block">Nome Completo</label>
+                {{ form.name }}
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="text-sm text-slate-400 mb-1 block">WhatsApp</label>
+                    {{ form.whatsapp }}
+                </div>
+                <div>
+                    <label class="text-sm text-slate-400 mb-1 block">CPF</label>
+                    {{ form.cpf }}
+                </div>
+            </div>
+            <div>
+                <label class="text-sm text-slate-400 mb-1 block">Serviço de Interesse</label>
+                {{ form.services }}
+            </div>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg shadow-lg transition-all mt-4">
+                ENVIAR MEUS DADOS
+            </button>
+        </form>
+    </section>
+</main>
+{% endblock %}
