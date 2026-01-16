@@ -15,7 +15,7 @@ class RegisterLeadForm(forms.ModelForm):
                 'class': 'input'
             }),
             'cpf': forms.TextInput(attrs={
-                'placeholder': 'Seu CPF',
+                'placeholder': 'Seu CPF (opcional)',
                 'class': 'input'
             }),
             'services': forms.Select(attrs={
