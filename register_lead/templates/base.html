@@ -10,41 +10,33 @@
     <style>
         body { background-color: #020617; color: #f8fafc; }
         .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(30, 41, 59, 0.5); }
-        /* Cor dourada personalizada */
         .text-gold {
             background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- NOVO ESTILO PARA OS CAMPOS DO FORMULÁRIO --- */
         input, select, textarea {
             width: 100%;
-            background-color: rgba(15, 23, 42, 0.6) !important; /* Fundo escuro e translúcido */
-            border: 1px solid rgba(59, 130, 246, 0.3) !important; /* Borda azul sutil */
-            padding: 1rem !important; /* Mais espaçamento interno */
-            border-radius: 1rem !important; /* Bordas bem arredondadas */
-            color: #f8fafc !important; /* Texto claro */
+            background-color: rgba(15, 23, 42, 0.6) !important;
+            border: 1px solid rgba(59, 130, 246, 0.3) !important;
+            padding: 1rem !important;
+            border-radius: 1rem !important;
+            color: #f8fafc !important;
             outline: none;
             margin-bottom: 1rem;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Sombra interna para profundidade */
-            backdrop-filter: blur(5px); /* Efeito de desfoque no fundo do input */
-            transition: all 0.3s ease; /* Transição suave */
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
-        /* Estilo quando o campo está em foco (clicado) */
         input:focus, select:focus, textarea:focus {
-            border-color: #3b82f6 !important; /* Borda azul brilhante */
-            background-color: rgba(15, 23, 42, 0.8) !important; /* Fundo um pouco menos transparente */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), inset 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important; /* Anel de foco azul */
+            border-color: #3b82f6 !important;
+            background-color: rgba(15, 23, 42, 0.8) !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), inset 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
         }
         
-        /* Estilo para o placeholder (texto de exemplo) */
-        ::placeholder {
-            color: #94a3b8; /* Cor cinza claro para o placeholder */
-            opacity: 1;
-        }
-        /* -------------------------------------------------- */
+        ::placeholder { color: #94a3b8; opacity: 1; }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -92,6 +84,9 @@
                     <li><a href="{% url 'about' %}#fgts">FGTS</a></li>
                     <li><a href="{% url 'about' %}#inss">INSS</a></li>
                     <li><a href="{% url 'about' %}#clt">CLT</a></li>
+                    <li><a href="{% url 'about' %}#governos">Governos (Estadual/Federal)</a></li>
+                    <li><a href="{% url 'about' %}#prefeituras">Prefeituras</a></li>
+                    <li><a href="{% url 'about' %}#outros">Crédito CNPJ e Imobiliário</a></li>
                 </ul>
             </div>
             <div>
