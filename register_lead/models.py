@@ -16,3 +16,11 @@ class RegisterLead(models.Model):
     services = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="Serviço")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Data de Criação")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Data de Atualização")
+
+    class Meta:
+        ordering = ['services']
+        verbose_name = "Registro de Lead"
+        verbose_name_plural = "Registros de Leads"
+
+    def __str__(self):
+        return f"{self.name} - {self.services.type_service}"
