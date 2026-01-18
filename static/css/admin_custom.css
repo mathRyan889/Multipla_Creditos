@@ -1,9 +1,40 @@
 /* static/css/admin_custom.css */
 
-/* LOGOUT: Melhora visibilidade do nome do usuário no topo */
-.nav-link { color: #ffffff !important; }
+/* --- FIX DE VISIBILIDADE DA BARRA SUPERIOR (NAVBAR) --- */
 
-/* CAIXAS DE PERMISSÃO GRANDES */
+/* Força a cor branca nos links do menu superior (Home, Ver Site, Usuário) */
+.main-header .nav-link, 
+.main-header .navbar-nav a, 
+.main-header .dropdown-user i,
+.main-header #brand-logo {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Garante que o ícone de usuário e o botão de logout sejam visíveis */
+.navbar-nav .nav-item .nav-link i, 
+.navbar-nav .nav-item .nav-link p {
+    color: #ffffff !important;
+}
+
+/* Cor de destaque ao passar o mouse nos botões superiores */
+.main-header .nav-link:hover {
+    color: #3b82f6 !important; /* Azul destaque */
+}
+
+/* Barra de pesquisa superior - Corrigindo contraste */
+.navbar-search-block .form-control {
+    background-color: #1e293b !important;
+    color: white !important;
+    border: 1px solid #3b82f6 !important;
+}
+
+/* Botão da barra de pesquisa */
+.navbar-search-block .btn-navbar {
+    color: white !important;
+}
+
+/* --- AJUSTE DAS CAIXAS DE PERMISSÃO (MANTENDO GRANDES) --- */
 .selector {
     width: 100% !important;
     display: block !important;
@@ -12,20 +43,32 @@
 .selector-available, .selector-chosen {
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
 }
 
 .selector select {
-    height: 600px !important; /* Altura máxima para legibilidade */
+    height: 500px !important; 
     width: 100% !important;
     background-color: #0f172a !important;
-    color: white !important;
+    color: #ffffff !important;
     border: 2px solid #3b82f6 !important;
     font-size: 1rem !important;
+    padding: 10px !important;
 }
 
+/* Filtros das caixas de permissão */
 .selector .selector-filter input {
     width: 100% !important;
     background: #1e293b !important;
     color: white !important;
+    border: 1px solid #475569 !important;
+    padding: 5px !important;
+}
+
+/* Labels das caixas */
+.selector h2 {
+    color: #ffffff !important;
+    background: #3b82f6 !important;
+    padding: 8px !important;
+    border-radius: 4px 4px 0 0 !important;
 }

@@ -58,6 +58,14 @@ JAZZMIN_SETTINGS = {
 JAZZMIN_UI_TWEAKS = {
     "theme": "darkly",
     "dark_mode_theme": "darkly",
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-primary", # Adiciona uma cor de destaque à marca
+    "navbar": "navbar-dark",          # Força o modo escuro na navbar
+    "no_navbar_border": False,        # Mantém a borda para separação visual
+    "navbar_fixed": True,
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-outline-secondary",
