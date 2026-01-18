@@ -12,3 +12,4 @@ class RegisterLeadAdmin(admin.ModelAdmin):
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('type_service', 'description')
     search_fields = ('type_service',)
+    list_filter = ('type_service',)
