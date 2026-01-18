@@ -47,12 +47,11 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": True,
     "custom_css": "css/admin_custom.css",
 
-    # --- CORREÇÃO DO LOGOUT ---
-    "user_menu_open": True, # Força o menu do usuário a ser funcional
-    "logout_link": "admin:logout", # Garante que o link aponte para a rota correta
-    "usermenu_links": [
-        {"name": "Mudar Senha", "url": "admin:password_change", "icon": "fas fa-key"},
-    ],
+    # --- CORREÇÃO DO LOGOUT E MENU DE USUÁRIO ---
+    "user_menu_open": True, 
+    "logout_link": "admin:logout",
+    # Removida a duplicidade: deixamos o Jazzmin usar o link padrão "Alterar senha"
+    "usermenu_links": [], 
 }
 
 JAZZMIN_UI_TWEAKS = {
@@ -62,9 +61,9 @@ JAZZMIN_UI_TWEAKS = {
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    "brand_colour": "navbar-primary", # Adiciona uma cor de destaque à marca
-    "navbar": "navbar-dark",          # Força o modo escuro na navbar
-    "no_navbar_border": False,        # Mantém a borda para separação visual
+    "brand_colour": "navbar-primary", 
+    "navbar": "navbar-dark",          
+    "no_navbar_border": False,        
     "navbar_fixed": True,
     "button_classes": {
         "primary": "btn-primary",
