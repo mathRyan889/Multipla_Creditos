@@ -14,7 +14,7 @@ class RegisterLead(models.Model):
     whatsapp = models.CharField(max_length=20, verbose_name="WhatsApp")
     cpf = models.CharField(max_length=15,blank=True,null=True, verbose_name="CPF")
     services = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="Serviço")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Data de Criação")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Data de cadastro")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Data de Atualização")
 
     class Meta:
