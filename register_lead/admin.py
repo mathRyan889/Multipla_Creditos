@@ -40,7 +40,7 @@ def exportar_leads_excel(modeladmin, request, queryset):
 @admin.register(RegisterLead)
 class RegisterLeadAdmin(admin.ModelAdmin):
     # UX: whatsapp_link adicionado para contato rápido sem sair da página
-    list_display = ('name', 'whatsapp_link', 'services', 'created_at')
+    list_display = ('name', 'whatsapp_link', 'CPF', 'services', 'created_at')
     list_display_links = ('name',)
     search_fields = ('name', 'whatsapp', 'cpf')
     list_filter = ('services', 'created_at')
@@ -66,4 +66,3 @@ class ServiceAdmin(admin.ModelAdmin):
     search_fields = ('type_service',)
     list_filter = ('type_service',)
 
-    
