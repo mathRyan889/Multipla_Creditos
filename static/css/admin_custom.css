@@ -1,0 +1,13 @@
+/* static/css/admin_custom.css */
+
+/* Muda a cor do botão "Adicionar" e destaques para Dourado/Ouro */
+.btn-success, .accent-primary .nav-link.active {
+    background-color: #c5a059 !important; /* Tom de dourado da logo */
+    border-color: #b38f4d !important;
+    color: #000 !important;
+}
+
+/* Ajusta o cabeçalho para o Azul Escuro do site */
+.main-header, .brand-link {
+    background-color: #020617 !important; /* Cor de fundo do seu site */
+}
