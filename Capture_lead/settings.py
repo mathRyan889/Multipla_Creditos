@@ -89,7 +89,7 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": True,
 }
 
-# Personalização de Cores (Tema Escuro com detalhes em Azul/Dourado)
+# Personalização para sistema Administrativo estilo SaaS (Dark Mode Total)
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
     "footer_small_text": False,
@@ -109,9 +109,12 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_child_indent": False,
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
-    "sidebar_nav_flat_style": False,
-    "theme": "flatly",  # Tema limpo e profissional
-    "dark_mode_theme": "darkly", # Opção de modo escuro
+    "sidebar_nav_flat_style": True, 
+    
+    # Configurações que eliminam o fundo branco
+    "theme": "darkly",            # Tema base escuro estilo SaaS
+    "dark_mode_theme": "darkly",   # Garante que todos os elementos usem a paleta dark
+    
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-secondary",
