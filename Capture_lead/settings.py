@@ -87,6 +87,9 @@ JAZZMIN_SETTINGS = {
 
     "show_sidebar": True,
     "navigation_expanded": True,
+
+    # LINHA ESSENCIAL ADICIONADA:
+    "custom_css": "css/admin_custom.css",
 }
 
 JAZZMIN_UI_TWEAKS = {

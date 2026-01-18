@@ -1,49 +1,60 @@
 /* static/css/admin_custom.css */
 
+/* --- RESET DE CORES (AZUL PARA BRANCO) --- */
+/* Força links, cabeçalhos de tabela e navegação para branco */
+a, 
+.table thead th a, 
+.table tbody td a, 
+.breadcrumb-item a,
+.nav-link,
+.text-primary,
+.column-header a,
+.sortable a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Efeito ao passar o mouse: Dourado suave */
+a:hover {
+    color: #c5a059 !important;
+}
+
 /* --- TEMA DARK SAAS PERSONALIZADO --- */
 
-/* Ajusta o cabeçalho e a barra lateral para o Azul Profundo da marca */
-.main-header, 
-.brand-link, 
-.main-sidebar,
-.sidebar-dark-primary {
+/* Cabeçalho e Lateral: Azul Profundo */
+.main-header, .brand-link, .main-sidebar, .sidebar-dark-primary {
     background-color: #020617 !important; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-/* Botão "Adicionar" e Itens Ativos com o Dourado da Logo */
+/* Botões e Itens Ativos: Dourado Múltipla */
 .btn-success, 
-.accent-primary .nav-link.active,
 .nav-pills .nav-link.active,
 .page-item.active .page-link {
     background: linear-gradient(135deg, #c5a059 0%, #b38f4d 100%) !important;
     border: none !important;
-    color: #000 !important;
+    color: #000 !important; /* Texto preto para contraste no dourado */
     font-weight: 600 !important;
-    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2) !important;
 }
 
-/* Efeito Hover no botão dourado */
 .btn-success:hover {
     filter: brightness(1.1);
     transform: translateY(-1px);
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
 /* --- REFINAMENTO DE UX --- */
 
-/* Arredondamento de Cards e Tabelas (Estilo Dashboard Moderno) */
 .card {
     border-radius: 16px !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    background-color: #0f172a !important; /* Azul levemente mais claro que o fundo */
+    background-color: #0f172a !important;
     overflow: hidden;
 }
 
-/* Estilização das Tabelas */
 .table {
     border-collapse: separate !important;
-    border-spacing: 0 8px !important; /* Efeito de linhas separadas */
+    border-spacing: 0 8px !important;
     background: transparent !important;
 }
 
@@ -51,35 +62,28 @@
     border: none !important;
     text-transform: uppercase;
     font-size: 0.7rem !important;
-    letter-spacing: 1px;
-    color: #94a3b8 !important;
+    color: #94a3b8 !important; /* Cinza para os títulos das colunas */
     padding: 15px !important;
 }
 
 .table tbody tr {
-    background-color: #1e293b !important; /* Fundo das linhas */
-    transition: 0.3s;
+    background-color: #1e293b !important;
 }
 
 .table tbody tr td {
     border: none !important;
     padding: 15px !important;
+    color: #ffffff !important;
 }
 
-/* Arredonda as pontas das linhas da tabela */
 .table tbody tr td:first-child { border-radius: 10px 0 0 10px !important; }
 .table tbody tr td:last-child { border-radius: 0 10px 10px 0 !important; }
 
-/* Efeito ao passar o mouse na linha */
 .table tbody tr:hover {
     background-color: #334155 !important;
-    transform: scale(1.005);
 }
 
-/* Inputs e busca com bordas suaves */
-input[type="text"], 
-input[type="search"], 
-select {
+input[type="text"], input[type="search"], select {
     border-radius: 8px !important;
     border: 1px solid #334155 !important;
     background-color: #0f172a !important;
