@@ -1,74 +1,48 @@
-/* static/css/admin_custom.css */
+/* --- TELA DE LOGIN: AJUSTE DA LOGO --- */
 
-/* --- FIX DE VISIBILIDADE DA BARRA SUPERIOR (NAVBAR) --- */
+/* Limita o tamanho da logo na tela de login */
+.login-logo img {
+    max-width: 200px !important; /* Ajuste este valor conforme desejar */
+    height: auto !important;
+    margin-bottom: 20px !important;
+}
 
-/* Força a cor branca nos links do menu superior (Home, Ver Site, Usuário) */
+/* Centraliza a logo e ajusta o espaçamento do formulário */
+.login-box {
+    width: 400px !important;
+    margin: 7% auto !important;
+}
+
+/* --- VISIBILIDADE DOS BOTÕES SUPERIORES (NAVBAR) --- */
+
+/* Força a visibilidade branca para Home, Ver Site e ícone de Usuário */
 .main-header .nav-link, 
 .main-header .navbar-nav a, 
-.main-header .dropdown-user i,
-.main-header #brand-logo {
+.main-header #brand-logo,
+.main-header .dropdown-user i {
     color: #ffffff !important;
     opacity: 1 !important;
 }
 
-/* Garante que o ícone de usuário e o botão de logout sejam visíveis */
-.navbar-nav .nav-item .nav-link i, 
-.navbar-nav .nav-item .nav-link p {
-    color: #ffffff !important;
-}
-
-/* Cor de destaque ao passar o mouse nos botões superiores */
+/* Efeito ao passar o mouse para saber que é um botão */
 .main-header .nav-link:hover {
-    color: #3b82f6 !important; /* Azul destaque */
+    color: #3b82f6 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px;
 }
 
-/* Barra de pesquisa superior - Corrigindo contraste */
+/* Ajuste da barra de pesquisa para não sumir no fundo escuro */
 .navbar-search-block .form-control {
     background-color: #1e293b !important;
     color: white !important;
     border: 1px solid #3b82f6 !important;
 }
 
-/* Botão da barra de pesquisa */
-.navbar-search-block .btn-navbar {
-    color: white !important;
-}
-
-/* --- AJUSTE DAS CAIXAS DE PERMISSÃO (MANTENDO GRANDES) --- */
-.selector {
-    width: 100% !important;
-    display: block !important;
-}
-
-.selector-available, .selector-chosen {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 25px !important;
-}
-
+/* --- MANTER CAIXAS DE PERMISSÃO GRANDES --- */
 .selector select {
-    height: 500px !important; 
+    height: 500px !important;
     width: 100% !important;
     background-color: #0f172a !important;
     color: #ffffff !important;
     border: 2px solid #3b82f6 !important;
-    font-size: 1rem !important;
-    padding: 10px !important;
-}
-
-/* Filtros das caixas de permissão */
-.selector .selector-filter input {
-    width: 100% !important;
-    background: #1e293b !important;
-    color: white !important;
-    border: 1px solid #475569 !important;
-    padding: 5px !important;
-}
-
-/* Labels das caixas */
-.selector h2 {
-    color: #ffffff !important;
-    background: #3b82f6 !important;
-    padding: 8px !important;
-    border-radius: 4px 4px 0 0 !important;
 }
