@@ -100,7 +100,7 @@ JAZZMIN_UI_TWEAKS = {
     "brand_colour": "navbar-dark",
     "accent": "accent-primary",
     "navbar": "navbar-dark",
-    "no_navbar_border": True, # Remove linhas desnecessárias
+    "no_navbar_border": True,
     "navbar_fixed": True,
     "layout_boxed": False,
     "footer_fixed": False,
@@ -108,7 +108,7 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar": "sidebar-dark-primary",
     "sidebar_nav_small_text": False,
     "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": True, # Melhora a hierarquia visual
+    "sidebar_nav_child_indent": True,
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": True,
@@ -116,11 +116,11 @@ JAZZMIN_UI_TWEAKS = {
     "dark_mode_theme": "darkly",
     "button_classes": {
         "primary": "btn-primary",
-        "secondary": "btn-outline-secondary", # Botões vazados são mais elegantes
+        "secondary": "btn-outline-secondary",
         "info": "btn-info",
         "warning": "btn-warning",
         "danger": "btn-danger",
-        "success": "btn-success"
+        "success": "btn-info"  # MUDADO: Agora usa a classe 'info' (Azul) para botões de sucesso/adicionar
     }
 }
 

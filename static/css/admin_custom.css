@@ -1,7 +1,7 @@
 /* static/css/admin_custom.css */
 
-/* --- RESET DE CORES (AZUL PARA BRANCO) --- */
-/* Força links, cabeçalhos de tabela e navegação para branco */
+/* --- CORREÇÃO DE LEGIBILIDADE (TEXTOS BRANCOS) --- */
+/* Força Links, Títulos de Coluna, Navegação e Nomes para Branco */
 a, 
 .table thead th a, 
 .table tbody td a, 
@@ -9,83 +9,96 @@ a,
 .nav-link,
 .text-primary,
 .column-header a,
-.sortable a {
+.sortable a,
+.card-title {
     color: #ffffff !important;
     text-decoration: none !important;
 }
 
-/* Efeito ao passar o mouse: Dourado suave */
-a:hover {
-    color: #c5a059 !important;
+/* Garante que o texto dentro das células da tabela seja branco */
+.table tbody tr td {
+    color: #ffffff !important;
 }
 
-/* --- TEMA DARK SAAS PERSONALIZADO --- */
+/* Efeito ao passar o mouse nos links (Um azul claro suave) */
+a:hover {
+    color: #60a5fa !important;
+    transition: 0.2s;
+}
 
-/* Cabeçalho e Lateral: Azul Profundo */
+/* --- ESTILIZAÇÃO DO BOTÃO ADICIONAR (AZUL) --- */
+/* Transforma os botões de ação em Azul Aço (igual ao pesquisar) */
+.btn-info, .btn-success {
+    background-color: #4682B4 !important; /* Azul SteelBlue */
+    border: 1px solid #315a7d !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Efeito Hover no botão azul */
+.btn-info:hover, .btn-success:hover {
+    background-color: #315a7d !important; /* Azul mais escuro ao passar o mouse */
+    transform: translateY(-1px);
+}
+
+/* --- TEMA DARK SAAS --- */
+
+/* Cabeçalho e Lateral: Azul Profundo (Midnight Blue) */
 .main-header, .brand-link, .main-sidebar, .sidebar-dark-primary {
     background-color: #020617 !important; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-/* Botões e Itens Ativos: Dourado Múltipla */
-.btn-success, 
-.nav-pills .nav-link.active,
-.page-item.active .page-link {
-    background: linear-gradient(135deg, #c5a059 0%, #b38f4d 100%) !important;
-    border: none !important;
-    color: #000 !important; /* Texto preto para contraste no dourado */
-    font-weight: 600 !important;
-}
+/* --- MELHORIAS VISUAIS DE UX --- */
 
-.btn-success:hover {
-    filter: brightness(1.1);
-    transform: translateY(-1px);
-    transition: 0.2s;
-}
-
-/* --- REFINAMENTO DE UX --- */
-
+/* Card (Fundo das tabelas) */
 .card {
-    border-radius: 16px !important;
+    border-radius: 12px !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     background-color: #0f172a !important;
-    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
-.table {
-    border-collapse: separate !important;
-    border-spacing: 0 8px !important;
-    background: transparent !important;
-}
-
+/* Cabeçalho da Tabela */
 .table thead th {
-    border: none !important;
+    background-color: #1e293b !important;
+    color: #94a3b8 !important; /* Cinza claro para não brigar com o texto branco */
     text-transform: uppercase;
-    font-size: 0.7rem !important;
-    color: #94a3b8 !important; /* Cinza para os títulos das colunas */
-    padding: 15px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #334155 !important;
+    padding: 16px !important;
 }
 
+/* Linhas da Tabela */
 .table tbody tr {
+    background-color: #0f172a !important;
+    border-bottom: 1px solid #1e293b !important;
+    transition: background-color 0.2s;
+}
+
+/* Células da Tabela */
+.table tbody tr td {
+    border-top: 1px solid #1e293b !important;
+    padding: 16px !important;
+    vertical-align: middle !important;
+}
+
+/* Hover na Linha da Tabela */
+.table tbody tr:hover {
     background-color: #1e293b !important;
 }
 
-.table tbody tr td {
-    border: none !important;
-    padding: 15px !important;
+/* Inputs de Busca e Seleção */
+input[type="text"], input[type="search"], select, .form-control {
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    background-color: #1e293b !important;
     color: #ffffff !important;
 }
 
-.table tbody tr td:first-child { border-radius: 10px 0 0 10px !important; }
-.table tbody tr td:last-child { border-radius: 0 10px 10px 0 !important; }
-
-.table tbody tr:hover {
-    background-color: #334155 !important;
-}
-
-input[type="text"], input[type="search"], select {
-    border-radius: 8px !important;
-    border: 1px solid #334155 !important;
-    background-color: #0f172a !important;
-    color: #fff !important;
+input:focus, select:focus {
+    border-color: #4682B4 !important;
+    box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.2) !important;
 }
