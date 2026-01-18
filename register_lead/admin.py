@@ -45,13 +45,19 @@ def exportar_leads_excel(modeladmin, request, queryset):
     return response
 
 
-
 @admin.register(RegisterLead)
 class RegisterLeadAdmin(admin.ModelAdmin):
-    list_display = ('name', 'whatsapp', 'cpf', 'services', 'created_at', 'updated_at')
+    # Organiza as colunas de forma legível
+    list_display = ('name', 'whatsapp', 'cpf', 'services', 'created_at')
+    
+    # Adiciona cores aos itens clicáveis e filtros rápidos
+    list_display_links = ('name',)
     search_fields = ('name', 'whatsapp', 'cpf')
     list_filter = ('services', 'created_at')
-    # Adiciona a ação aqui:
+    
+    # Define como datas vazias ou campos nulos aparecem
+    empty_value_display = "- não informado -"
+    
     actions = [exportar_leads_excel]
 
 @admin.register(Service)
