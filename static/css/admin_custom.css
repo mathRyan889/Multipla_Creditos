@@ -1,104 +1,153 @@
 /* static/css/admin_custom.css */
 
-/* --- CORREÇÃO DE LEGIBILIDADE (TEXTOS BRANCOS) --- */
-/* Força Links, Títulos de Coluna, Navegação e Nomes para Branco */
-a, 
-.table thead th a, 
-.table tbody td a, 
-.breadcrumb-item a,
-.nav-link,
-.text-primary,
-.column-header a,
-.sortable a,
-.card-title {
+/* =========================================
+   1. CORREÇÃO GERAL DE LEITURA
+   ========================================= */
+a, a:visited, .table a, .breadcrumb-item a, 
+.nav-pills .nav-link, .card-title, .text-primary {
     color: #ffffff !important;
     text-decoration: none !important;
 }
 
-/* Garante que o texto dentro das células da tabela seja branco */
-.table tbody tr td {
-    color: #ffffff !important;
+.table thead th {
+    color: #cbd5e1 !important;
+    text-transform: uppercase;
 }
 
-/* Efeito ao passar o mouse nos links (Um azul claro suave) */
+.table tbody td {
+    color: #ffffff !important;
+    vertical-align: middle !important;
+}
+
 a:hover {
     color: #60a5fa !important;
     transition: 0.2s;
 }
 
-/* --- ESTILIZAÇÃO DO BOTÃO ADICIONAR (AZUL) --- */
-/* Transforma os botões de ação em Azul Aço (igual ao pesquisar) */
-.btn-info, .btn-success {
-    background-color: #4682B4 !important; /* Azul SteelBlue */
-    border: 1px solid #315a7d !important;
+/* =========================================
+   2. BOTÕES AZUIS
+   ========================================= */
+.btn-info, .btn-primary, .btn-success {
+    background-color: #3b82f6 !important;
+    border: none !important;
     color: #ffffff !important;
     font-weight: 600 !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito Hover no botão azul */
-.btn-info:hover, .btn-success:hover {
-    background-color: #315a7d !important; /* Azul mais escuro ao passar o mouse */
+.btn-info:hover, .btn-primary:hover, .btn-success:hover {
+    background-color: #2563eb !important;
     transform: translateY(-1px);
 }
 
-/* --- TEMA DARK SAAS --- */
-
-/* Cabeçalho e Lateral: Azul Profundo (Midnight Blue) */
-.main-header, .brand-link, .main-sidebar, .sidebar-dark-primary {
-    background-color: #020617 !important; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+/* =========================================
+   3. ESTILIZAÇÃO DO DARK THEME
+   ========================================= */
+.main-header, .main-sidebar, .content-wrapper {
+    background-color: #0f172a !important;
 }
 
-/* --- MELHORIAS VISUAIS DE UX --- */
-
-/* Card (Fundo das tabelas) */
 .card {
-    border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    background-color: #0f172a !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-}
-
-/* Cabeçalho da Tabela */
-.table thead th {
     background-color: #1e293b !important;
-    color: #94a3b8 !important; /* Cinza claro para não brigar com o texto branco */
-    text-transform: uppercase;
-    font-size: 0.75rem !important;
-    letter-spacing: 0.05em;
-    border-bottom: 2px solid #334155 !important;
-    padding: 16px !important;
+    border: 1px solid rgba(255,255,255,0.05) !important;
 }
 
-/* Linhas da Tabela */
-.table tbody tr {
-    background-color: #0f172a !important;
-    border-bottom: 1px solid #1e293b !important;
-    transition: background-color 0.2s;
-}
-
-/* Células da Tabela */
-.table tbody tr td {
-    border-top: 1px solid #1e293b !important;
-    padding: 16px !important;
-    vertical-align: middle !important;
-}
-
-/* Hover na Linha da Tabela */
-.table tbody tr:hover {
-    background-color: #1e293b !important;
-}
-
-/* Inputs de Busca e Seleção */
-input[type="text"], input[type="search"], select, .form-control {
-    border-radius: 6px !important;
-    border: 1px solid #334155 !important;
-    background-color: #1e293b !important;
+input.form-control, select.form-control {
+    background-color: #334155 !important;
+    border: 1px solid #475569 !important;
     color: #ffffff !important;
 }
 
-input:focus, select:focus {
-    border-color: #4682B4 !important;
-    box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.2) !important;
+/* =========================================
+   4. CORREÇÃO DAS CAIXAS DE SELEÇÃO (PERMISSÕES)
+   ========================================= */
+
+/* Container principal do seletor duplo */
+.selector {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+/* Caixas de seleção (Disponível e Escolhido) */
+.selector select {
+    height: 400px !important; /* AUMENTADO: Muito mais alto para ver os itens */
+    width: 100% !important;   /* AUMENTADO: Ocupa toda a largura do bloco */
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+    padding: 10px !important;
+}
+
+/* Container de cada lado (Esquerda/Direita) */
+.selector-available, .selector-chosen {
+    flex: 1 !important; /* Faz ambos crescerem igualmente */
+    width: 48% !important;
+}
+
+/* Título das caixas (h2) */
+.selector h2 {
+    color: #94a3b8 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 8px !important;
+    background: none !important; /* Remove fundo cinza padrão feio */
+    padding: 0 !important;
+}
+
+/* Ícones de filtro e setas do meio */
+.selector .selector-filter {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 0 5px 0 !important;
+}
+
+.selector .selector-filter input {
+    width: 100% !important;
+    background-color: #334155 !important;
+    border: 1px solid #475569 !important;
+    color: white !important;
+    border-radius: 4px !important;
+    margin-bottom: 5px !important;
+}
+
+/* Ícones de "Escolher todos" / setas */
+.selector .selector-chooser {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: scale(1.2); /* Aumenta um pouco as setinhas */
+}
+
+/* Opções dentro da lista */
+.selector option {
+    padding: 8px 10px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.selector option:hover {
+    background-color: #3b82f6 !important;
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+/* Se a tela for menor que 1000px, coloca as caixas uma em cima da outra */
+@media (max-width: 1000px) {
+    .selector {
+        flex-direction: column !important;
+    }
+    
+    .selector-available, .selector-chosen {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    .selector-chooser {
+        transform: rotate(90deg); /* Vira as setas para baixo */
+        margin: 10px 0 !important;
+    }
 }
