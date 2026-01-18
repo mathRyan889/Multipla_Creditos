@@ -46,6 +46,13 @@ JAZZMIN_SETTINGS = {
     "show_sidebar": True,
     "navigation_expanded": True,
     "custom_css": "css/admin_custom.css",
+
+    # --- CORREÇÃO DO LOGOUT ---
+    "user_menu_open": True, # Força o menu do usuário a ser funcional
+    "logout_link": "admin:logout", # Garante que o link aponte para a rota correta
+    "usermenu_links": [
+        {"name": "Mudar Senha", "url": "admin:password_change", "icon": "fas fa-key"},
+    ],
 }
 
 JAZZMIN_UI_TWEAKS = {

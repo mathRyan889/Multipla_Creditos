@@ -1,101 +1,31 @@
 /* static/css/admin_custom.css */
 
-/* --- LEITURA GERAL --- */
-a, .table a, .breadcrumb-item a, .nav-link, .card-title, .text-primary {
-    color: #ffffff !important;
-}
-.table tbody td { color: #ffffff !important; }
+/* LOGOUT: Melhora visibilidade do nome do usuário no topo */
+.nav-link { color: #ffffff !important; }
 
-/* --- BOTÕES --- */
-.btn-info, .btn-primary, .btn-success {
-    background-color: #3b82f6 !important;
-    border: none !important;
-    color: #ffffff !important;
-}
-
-/* --- EXPLOSÃO DAS CAIXAS DE PERMISSÃO (DEIXAR GRANDES E LEGÍVEIS) --- */
-
-/* Força o container a não se espremer */
+/* CAIXAS DE PERMISSÃO GRANDES */
 .selector {
     width: 100% !important;
-    max-width: 100% !important;
-    display: block !important; /* Empilha verticalmente para ganhar largura total */
+    display: block !important;
 }
 
-/* Deixa cada caixa (Disponível e Escolhida) com largura total */
 .selector-available, .selector-chosen {
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 15px !important;
-    float: none !important;
+    margin-bottom: 20px !important;
 }
 
-/* Aumenta a altura e torna o fundo escuro para combinar com o tema */
 .selector select {
+    height: 600px !important; /* Altura máxima para legibilidade */
     width: 100% !important;
-    height: 600px !important; /* Altura GIGANTE para ver muitos registros */
     background-color: #0f172a !important;
-    color: #ffffff !important;
-    border: 2px solid #3b82f6 !important; /* Borda azul para destacar */
-    border-radius: 8px !important;
-    font-size: 1rem !important; /* Texto maior dentro da caixa */
-    padding: 10px !important;
-}
-
-/* Títulos das caixas */
-.selector h2 {
-    background: #1e293b !important;
-    color: #3b82f6 !important;
-    padding: 10px !important;
-    border-radius: 8px 8px 0 0 !important;
-    border: 1px solid #3b82f6 !important;
+    color: white !important;
+    border: 2px solid #3b82f6 !important;
     font-size: 1rem !important;
-    text-transform: uppercase;
-}
-
-/* Barra de Filtro */
-.selector .selector-filter {
-    background-color: #1e293b !important;
-    border: 1px solid #475569 !important;
-    padding: 8px !important;
-    width: 100% !important;
 }
 
 .selector .selector-filter input {
-    width: 98% !important;
-    background: #0f172a !important;
+    width: 100% !important;
+    background: #1e293b !important;
     color: white !important;
-    border: 1px solid #3b82f6 !important;
-}
-
-/* Setas de ação no meio (Adicionar/Remover) */
-.selector-chooser {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    list-style: none !important;
-    padding: 10px 0 !important;
-    margin: 0 !important;
-    background: #0f172a !important;
-}
-
-.selector-chooser li {
-    padding: 0 15px !important;
-}
-
-/* Transforma as setas em ícones grandes */
-.selector-add, .selector-remove {
-    transform: scale(1.8) !important;
-    filter: invert(1) brightness(2); /* Deixa as setas brancas/visíveis */
-}
-
-/* Rodapé das caixas (Escolher todos / Remover todos) */
-.selector-chooseall, .selector-clearall {
-    display: inline-block !important;
-    padding: 8px 15px !important;
-    background: #3b82f6 !important;
-    color: white !important;
-    border-radius: 4px !important;
-    margin-top: 5px !important;
-    font-weight: bold !important;
 }
