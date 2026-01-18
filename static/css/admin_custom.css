@@ -1,153 +1,101 @@
 /* static/css/admin_custom.css */
 
-/* =========================================
-   1. CORREÇÃO GERAL DE LEITURA
-   ========================================= */
-a, a:visited, .table a, .breadcrumb-item a, 
-.nav-pills .nav-link, .card-title, .text-primary {
+/* --- LEITURA GERAL --- */
+a, .table a, .breadcrumb-item a, .nav-link, .card-title, .text-primary {
     color: #ffffff !important;
-    text-decoration: none !important;
 }
+.table tbody td { color: #ffffff !important; }
 
-.table thead th {
-    color: #cbd5e1 !important;
-    text-transform: uppercase;
-}
-
-.table tbody td {
-    color: #ffffff !important;
-    vertical-align: middle !important;
-}
-
-a:hover {
-    color: #60a5fa !important;
-    transition: 0.2s;
-}
-
-/* =========================================
-   2. BOTÕES AZUIS
-   ========================================= */
+/* --- BOTÕES --- */
 .btn-info, .btn-primary, .btn-success {
     background-color: #3b82f6 !important;
     border: none !important;
     color: #ffffff !important;
-    font-weight: 600 !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-.btn-info:hover, .btn-primary:hover, .btn-success:hover {
-    background-color: #2563eb !important;
-    transform: translateY(-1px);
-}
+/* --- EXPLOSÃO DAS CAIXAS DE PERMISSÃO (DEIXAR GRANDES E LEGÍVEIS) --- */
 
-/* =========================================
-   3. ESTILIZAÇÃO DO DARK THEME
-   ========================================= */
-.main-header, .main-sidebar, .content-wrapper {
-    background-color: #0f172a !important;
-}
-
-.card {
-    background-color: #1e293b !important;
-    border: 1px solid rgba(255,255,255,0.05) !important;
-}
-
-input.form-control, select.form-control {
-    background-color: #334155 !important;
-    border: 1px solid #475569 !important;
-    color: #ffffff !important;
-}
-
-/* =========================================
-   4. CORREÇÃO DAS CAIXAS DE SELEÇÃO (PERMISSÕES)
-   ========================================= */
-
-/* Container principal do seletor duplo */
+/* Força o container a não se espremer */
 .selector {
     width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: 15px !important;
+    max-width: 100% !important;
+    display: block !important; /* Empilha verticalmente para ganhar largura total */
 }
 
-/* Caixas de seleção (Disponível e Escolhido) */
+/* Deixa cada caixa (Disponível e Escolhida) com largura total */
+.selector-available, .selector-chosen {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px !important;
+    float: none !important;
+}
+
+/* Aumenta a altura e torna o fundo escuro para combinar com o tema */
 .selector select {
-    height: 400px !important; /* AUMENTADO: Muito mais alto para ver os itens */
-    width: 100% !important;   /* AUMENTADO: Ocupa toda a largura do bloco */
+    width: 100% !important;
+    height: 600px !important; /* Altura GIGANTE para ver muitos registros */
     background-color: #0f172a !important;
     color: #ffffff !important;
-    border: 1px solid #475569 !important;
+    border: 2px solid #3b82f6 !important; /* Borda azul para destacar */
     border-radius: 8px !important;
-    font-size: 0.9rem !important;
+    font-size: 1rem !important; /* Texto maior dentro da caixa */
     padding: 10px !important;
 }
 
-/* Container de cada lado (Esquerda/Direita) */
-.selector-available, .selector-chosen {
-    flex: 1 !important; /* Faz ambos crescerem igualmente */
-    width: 48% !important;
-}
-
-/* Título das caixas (h2) */
+/* Títulos das caixas */
 .selector h2 {
-    color: #94a3b8 !important;
-    font-size: 0.9rem !important;
+    background: #1e293b !important;
+    color: #3b82f6 !important;
+    padding: 10px !important;
+    border-radius: 8px 8px 0 0 !important;
+    border: 1px solid #3b82f6 !important;
+    font-size: 1rem !important;
     text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 8px !important;
-    background: none !important; /* Remove fundo cinza padrão feio */
-    padding: 0 !important;
 }
 
-/* Ícones de filtro e setas do meio */
+/* Barra de Filtro */
 .selector .selector-filter {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 0 5px 0 !important;
+    background-color: #1e293b !important;
+    border: 1px solid #475569 !important;
+    padding: 8px !important;
+    width: 100% !important;
 }
 
 .selector .selector-filter input {
-    width: 100% !important;
-    background-color: #334155 !important;
-    border: 1px solid #475569 !important;
+    width: 98% !important;
+    background: #0f172a !important;
+    color: white !important;
+    border: 1px solid #3b82f6 !important;
+}
+
+/* Setas de ação no meio (Adicionar/Remover) */
+.selector-chooser {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    list-style: none !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    background: #0f172a !important;
+}
+
+.selector-chooser li {
+    padding: 0 15px !important;
+}
+
+/* Transforma as setas em ícones grandes */
+.selector-add, .selector-remove {
+    transform: scale(1.8) !important;
+    filter: invert(1) brightness(2); /* Deixa as setas brancas/visíveis */
+}
+
+/* Rodapé das caixas (Escolher todos / Remover todos) */
+.selector-chooseall, .selector-clearall {
+    display: inline-block !important;
+    padding: 8px 15px !important;
+    background: #3b82f6 !important;
     color: white !important;
     border-radius: 4px !important;
-    margin-bottom: 5px !important;
-}
-
-/* Ícones de "Escolher todos" / setas */
-.selector .selector-chooser {
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: scale(1.2); /* Aumenta um pouco as setinhas */
-}
-
-/* Opções dentro da lista */
-.selector option {
-    padding: 8px 10px !important;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.selector option:hover {
-    background-color: #3b82f6 !important;
-}
-
-/* --- RESPONSIVIDADE (Mobile) --- */
-/* Se a tela for menor que 1000px, coloca as caixas uma em cima da outra */
-@media (max-width: 1000px) {
-    .selector {
-        flex-direction: column !important;
-    }
-    
-    .selector-available, .selector-chosen {
-        width: 100% !important;
-        margin-bottom: 20px;
-    }
-    
-    .selector-chooser {
-        transform: rotate(90deg); /* Vira as setas para baixo */
-        margin: 10px 0 !important;
-    }
+    margin-top: 5px !important;
+    font-weight: bold !important;
 }
