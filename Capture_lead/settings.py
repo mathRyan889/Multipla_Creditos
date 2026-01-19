@@ -7,8 +7,8 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-#h$fyy&!xi=_$1lyg6ofwh2zaf@ogu5jlg&i4t1dwc_)g2gt0)'
-DEBUG = True
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'chave-padrao-caso-falhe')
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['multiplacreditos7.pythonanywhere.com']
 
 INSTALLED_APPS = [
