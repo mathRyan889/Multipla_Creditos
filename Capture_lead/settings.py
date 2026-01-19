@@ -1,15 +1,16 @@
-"""
-Django settings for Capture_lead project.
-"""
-
-from pathlib import Path
 import os
+from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'chave-padrao-caso-falhe')
+# Carrega o arquivo .env
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-fallback-key-123')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['multiplacreditos7.pythonanywhere.com']
+
+ALLOWED_HOSTS = ['multiplacreditos7.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -26,53 +27,16 @@ JAZZMIN_SETTINGS = {
     "site_title": "Múltipla Créditos Admin",
     "site_header": "Múltipla Créditos",
     "site_brand": "Múltipla Créditos",
-    "site_logo": "images/logo.png",
-    "login_logo": "images/logo.png",
-    "welcome_sign": "Bem-vindo ao Gestor de Leads",
     "copyright": "Múltipla Créditos © 2026",
+    "welcome_sign": "Bem-vindo ao Gestor de Leads",
     "search_model": ["register_lead.RegisterLead"],
+    "show_sidebar": True,
+    "navigation_expanded": True,
     "icons": {
         "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
         "register_lead.RegisterLead": "fas fa-address-card",
         "register_lead.Service": "fas fa-hand-holding-usd",
     },
-    "order_with_respect_to": ["register_lead", "auth"],
-    "topmenu_links": [
-        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
-        {"name": "Ver Site", "url": "/", "new_window": True},
-    ],
-    "show_sidebar": True,
-    "navigation_expanded": True,
-    "custom_css": "css/admin_custom.css",
-
-    # --- CORREÇÃO DO LOGOUT E MENU DE USUÁRIO ---
-    "user_menu_open": True, 
-    "logout_link": "admin:logout",
-    # Removida a duplicidade: deixamos o Jazzmin usar o link padrão "Alterar senha"
-    "usermenu_links": [], 
-}
-
-JAZZMIN_UI_TWEAKS = {
-    "theme": "darkly",
-    "dark_mode_theme": "darkly",
-    "navbar_small_text": False,
-    "footer_small_text": False,
-    "body_small_text": False,
-    "brand_small_text": False,
-    "brand_colour": "navbar-primary", 
-    "navbar": "navbar-dark",          
-    "no_navbar_border": False,        
-    "navbar_fixed": True,
-    "button_classes": {
-        "primary": "btn-primary",
-        "secondary": "btn-outline-secondary",
-        "info": "btn-info",
-        "warning": "btn-warning",
-        "danger": "btn-danger",
-        "success": "btn-info" 
-    }
 }
 
 MIDDLEWARE = [
