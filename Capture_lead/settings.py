@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Carrega o arquivo .env
+# Carrega o arquivo .env que está na raiz
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-fallback-key-123')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'chave-temporaria-se-o-env-falhar')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['multiplacreditos7.pythonanywhere.com', 'localhost', '127.0.0.1']
@@ -27,16 +27,18 @@ JAZZMIN_SETTINGS = {
     "site_title": "Múltipla Créditos Admin",
     "site_header": "Múltipla Créditos",
     "site_brand": "Múltipla Créditos",
-    "copyright": "Múltipla Créditos © 2026",
     "welcome_sign": "Bem-vindo ao Gestor de Leads",
+    "copyright": "Múltipla Créditos © 2026",
     "search_model": ["register_lead.RegisterLead"],
-    "show_sidebar": True,
-    "navigation_expanded": True,
     "icons": {
         "auth": "fas fa-users-cog",
         "register_lead.RegisterLead": "fas fa-address-card",
         "register_lead.Service": "fas fa-hand-holding-usd",
     },
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "user_menu_open": True, 
+    "logout_link": "admin:logout",
 }
 
 MIDDLEWARE = [

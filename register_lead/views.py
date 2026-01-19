@@ -5,21 +5,20 @@ from django.shortcuts import render, redirect
 from .forms import RegisterLeadForm
 
 def send_pushbullet_notification(lead):
-    # Pega o Token do arquivo .env com segurança
+    # Busca o token do arquivo .env
     access_token = os.getenv('PUSHBULLET_TOKEN')
     url = "https://api.pushbullet.com/v2/pushes"
     
     if not access_token:
-        print("Erro: PUSHBULLET_TOKEN não configurado no .env")
         return
 
     payload = {
         "type": "note",
-        "title": "🔥 Novo Lead Capturado",
+        "title": "🔥 Novo Lead: Múltipla Créditos",
         "body": (
             f"Nome: {lead.name}\n"
             f"Serviço: {lead.services.type_service}\n"
-            f"Whats: {lead.whatsapp}\n"
+            f"WhatsApp: {lead.whatsapp}\n"
             f"CPF: {lead.cpf if lead.cpf else 'Não informado'}"
         )
     }
@@ -32,7 +31,7 @@ def send_pushbullet_notification(lead):
     try:
         requests.post(url, data=json.dumps(payload), headers=headers, timeout=10)
     except Exception as e:
-        print(f"Erro ao enviar notificação: {e}")
+        print(f"Erro Pushbullet: {e}")
 
 def home(request):
     if request.method == 'POST':
