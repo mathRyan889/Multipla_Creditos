@@ -31,7 +31,12 @@ JAZZMIN_SETTINGS = {
     "copyright": "Múltipla Créditos © 2026",
     "search_model": ["register_lead.RegisterLead"],
     "icons": {
+        # Ícone do menu pai (Autenticação)
         "auth": "fas fa-users-cog",
+        # Ícones dos submenus que estavam faltando
+        "auth.User": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        # Ícones dos seus modelos personalizados
         "register_lead.RegisterLead": "fas fa-address-card",
         "register_lead.Service": "fas fa-hand-holding-usd",
     },
