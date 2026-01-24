@@ -39,6 +39,10 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": True,
     "user_menu_open": True, 
     "logout_link": "admin:logout",
+    # ... outras configurações ...
+    "site_logo": "images/logo.png",  # Caminho relativo dentro da pasta static
+    "login_logo": "images/logo.png", # Se quiser que apareça na tela de login também
+    "site_icon": "images/logo.png",  # Favicon (ícone da aba do navegador)
 }
 
 MIDDLEWARE = [

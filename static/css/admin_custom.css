@@ -7,6 +7,13 @@
     margin-bottom: 20px !important;
 }
 
+/* Ajusta a logo que aparece no canto superior esquerdo (Navbar) */
+.brand-link img {
+    max-height: 40px !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
 /* Centraliza a logo e ajusta o espaçamento do formulário */
 .login-box {
     width: 400px !important;
