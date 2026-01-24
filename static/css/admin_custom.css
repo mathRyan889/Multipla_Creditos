@@ -1,23 +1,25 @@
 /* --- TELA DE LOGIN: AJUSTE DA LOGO --- */
 
-/* Limita o tamanho da logo na tela de login */
-.login-logo img {
-    max-width: 200px !important; /* Ajuste este valor conforme desejar */
+/* Alvo certeiro na imagem de login do Jazzmin/AdminLTE */
+.login-box .login-logo img, 
+.login-page .login-logo img {
+    max-width: 180px !important; /* Tamanho reduzido para ficar harmônico */
     height: auto !important;
-    margin-bottom: 20px !important;
+    display: block !important;
+    margin: 0 auto 15px auto !important;
 }
 
-/* Ajusta a logo que aparece no canto superior esquerdo (Navbar) */
-.brand-link img {
-    max-height: 40px !important;
-    width: auto !important;
-    object-fit: contain;
+/* Garante que o container da logo não force largura total */
+.login-logo {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 10px !important;
 }
 
-/* Centraliza a logo e ajusta o espaçamento do formulário */
+/* Centraliza a caixa de login e evita que ela suba demais */
 .login-box {
-    width: 400px !important;
-    margin: 7% auto !important;
+    width: 360px !important;
+    margin: 5% auto !important;
 }
 
 /* --- VISIBILIDADE DOS BOTÕES SUPERIORES (NAVBAR) --- */
